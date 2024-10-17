@@ -15,6 +15,14 @@ jobs:
       with:
         node-version: '20'  
 
+    - name: Cache pnpm store
+      uses: actions/cache@v4
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+          
     - name: Install pnpm
       run: npm install -g pnpm
 
@@ -28,7 +36,7 @@ jobs:
       run: pnpm build:web
 
     - name: Deploy to GitHub Pages
-      uses: actions-gh-pages@v4
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: packages/client/dist
