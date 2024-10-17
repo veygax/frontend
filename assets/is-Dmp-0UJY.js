@@ -1,0 +1,1 @@
+const e={about:"vita um Revolt",tos:"Skilmálar þjónustu",privacy:"Friðhelgisstefna",off:"af",learn_more:"Læra meira"},n={submit:"Sendu inn"},i={title:"Skrá inn",welcome:"Velkominn!",welcome2:"Halló!",register:"Skráðu þig",password:"Lykilorð",current_password:"Núverandi lykilorð"},o={general:e,actions:n,login:i};export{n as actions,o as default,e as general,i as login};
