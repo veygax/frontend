@@ -9,7 +9,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
+      with:
+        submodules: true
+        
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
@@ -19,7 +21,7 @@ jobs:
       run: npm install -g pnpm
 
     - name: Install dependencies
-      run: pnpm install --recursive --no-frozen-lockfile
+      run: pnpm install --no-frozen-lockfile
 
     - name: Build dependencies
       run: pnpm build:deps
