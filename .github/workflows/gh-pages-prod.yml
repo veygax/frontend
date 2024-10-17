@@ -27,7 +27,7 @@ jobs:
       run: pnpm build:deps
 
     - name: Build for web
-      run: pnpm build:web
+      run: pnpm build:prod
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
